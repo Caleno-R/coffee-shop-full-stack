@@ -2,7 +2,7 @@ venv/
 .vscode/
 __pycache__/
 test.db
-backend/env/
+
 
 # OS generated files #
 ######################
@@ -13,3 +13,5 @@ backend/env/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+backend/env
