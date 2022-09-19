@@ -42,8 +42,6 @@ def retrieve_drinks():
 
     }), 200
 
-
-
 '''
 @TODO implement endpoint
     GET /drinks-detail
@@ -62,6 +60,29 @@ def retrieve_drinks():
     returns status code 200 and json {"success": True, "drinks": drink} where drink an array containing only the newly created drink
         or appropriate status code indicating reason for failure
 '''
+app.route('/drinks', methods=['POST'])
+def create_drink():
+    body = request.get_json()
+    print(body)
+
+    new_title = body.get('title', None)
+    new_recipe = body.get('recipe', None)
+
+    try:
+        # Create drink
+        drink = Drink(
+            title = new_title,
+            recipe = new_recipe,
+        )
+        #  Insert to db
+        drink.insert()
+
+        return jsonify({
+            'success': True,
+            'drinks': len([drink.long for drink in drink]-1)            
+        }),200
+    except:
+        abort(404)
 
 
 '''
