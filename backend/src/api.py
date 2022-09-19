@@ -53,8 +53,6 @@ def retrieve_drinks():
         or appropriate status code indicating reason for failure
 '''
 
-
-
 '''
 @TODO implement endpoint
     POST /drinks
