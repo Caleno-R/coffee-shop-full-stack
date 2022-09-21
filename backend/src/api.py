@@ -90,7 +90,7 @@ def update_drinks(payload, id):
             drink.title = title
 
         # Check if recipe is to be updated
-        if recipe:
+        elif recipe:
 
             # Convert recipe object into a string
             drink.recipe = json.dumps(recipe)
@@ -101,7 +101,7 @@ def update_drinks(payload, id):
 
     return jsonify({
         'success': True,
-        'drinks': drink.long()
+        'drinks': [drink.long()]
 
     }), 200
 

@@ -1,5 +1,4 @@
 import json
-import os
 from flask import request, _request_ctx_stack
 from functools import wraps
 from jose import jwt
@@ -126,7 +125,7 @@ def verify_decode_jwt(token):
                 'code': 'invalid_header',
                 'description': 'Unable to parse authentication token'
             }, 401)
-            
+
     raise AuthError({
         'code': 'invalid_header',
         'description':'Unable to find the appropriate key.'
